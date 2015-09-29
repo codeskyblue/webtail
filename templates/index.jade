@@ -1,0 +1,14 @@
+//- vim: set ts=2 sts=2 sw=2 noexpandtab:
+
+extends layout
+
+block script
+	script(src='/src/index.js', type='text/jsx')
+	//-script(src='/js/index.js')
+
+block content
+	.container
+		h1 tail -f log
+		div#example
+		pre.console
+
