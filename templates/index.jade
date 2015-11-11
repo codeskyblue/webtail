@@ -11,10 +11,14 @@ block script
 block content
 	.container(ng-controller='MainCtrl')
 		//- h1 tail -f log {{name}}
-		div.logs(scroll-glue-bottom="glued")
-			ul
-				li(ng-repeat='line in logs')
-					{{line.number}}: {{line.body}}
+		pre.log
+			div(ng-class="line.selected ? 'line-selected' : 'line'", ng-repeat='line in logs')
+				p.inner-line(ng-click='line.selected = !line.selected') 
+					{{line.body}}
+		//- div.logs(scroll-glue-bottom="glued")
+		//- 	ul
+		//- 		li(ng-repeat='line in logs')
+		//- 			{{line.number}}: {{line.body}}
 		//- div#bottom
 		//- div#example
 		//- pre.console

@@ -28,7 +28,7 @@ html(ng-app='webtail')
 
 		block script
 	body
-		nav.navbar.navbar-default(ng-controller='NavCtrl')
+		nav.navbar.navbar-default.navbar-fixed-top(ng-controller='NavCtrl')
 			.container
 				.navbar-header
 					button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#bs-navbar')
@@ -60,12 +60,12 @@ html(ng-app='webtail')
 								span(translate) Login
 
 		block content
-		//- hr
-		//- .container#footer
-		//- 	.pull-right
-		//- 		a(href="https://github.com/codeskyblue/webtail") webtail
-		//- 		span &nbsp;written by
-		//- 		a(href="https://github.com/codeskyblue") &nbsp;codeskyblue&nbsp;
-		//- 		span 2015 golang,macaron
+		hr
+		.container#footer
+			.pull-left
+				a(href="https://github.com/codeskyblue/webtail") webtail
+				span &nbsp;written by
+				a(href="https://github.com/codeskyblue") &nbsp;codeskyblue&nbsp;
+				span 2015 golang,macaron
 
 

@@ -6,6 +6,13 @@ app.controller('NavCtrl', function($scope){
 	$scope.currLang = 'en';
 })
 
+var _isScrolledBottom = function () {
+    var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+    var totalHeight = document.body.offsetHeight;
+    var clientHeight = document.documentElement.clientHeight;
+    return totalHeight <= currentScroll + clientHeight;
+};
+
 app.controller('MainCtrl', function($scope, $interval){
 	$scope.name = 'Hello world';
 	$scope.maxLine = 50;
@@ -14,17 +21,22 @@ app.controller('MainCtrl', function($scope, $interval){
 		body: 'hello'
 	}]
 
-	$interval(function(){
+	setInterval(function(){
+		var wasScrolledBottom = _isScrolledBottom();
+		
 		$scope.logs.push({
 			number: 2,
+			selected: false,
 			body: 'haha' + new Date()
 		})
 		if ($scope.logs.length > $scope.maxLine){
 			// $scope.logs.shift();
 		}
-		// var bottom = document.getElementById("bottom");
-		// bottom.scrollTop = bottom.scrollHeight;
-		// console.log(bottom.scrollHeight)
-		// window.scrollTo(0,document.body.scrollHeight);
-	}, 500)
+
+		$scope.$digest(); // refresh page
+
+		if (wasScrolledBottom) {
+            window.scrollTo(0, document.body.scrollHeight);
+        }
+	}, 1000)
 })

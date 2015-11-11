@@ -1,9 +1,42 @@
-div.logs {
-	height: 200px;
+/*div.logs {
+	height: 100%;
 	overflow: scroll;
 	border: 1px solid red;
 }
+*//*
+html, body {
+    height: 100%;
+}*/
 
-html {
-    overflow-y: scroll; 
+body {
+    padding-top: 4em;
+}
+
+.no-topbar {
+    padding-top: 10px;
+}
+
+.log {
+    white-space: pre-wrap;
+    color: black;
+    font-size: .85em;
+    background: inherit;
+    border: 0;
+    padding: 0;
+}
+
+.log .inner-line {
+    padding: 0 15px;
+    margin-left: 84pt;
+    text-indent: -84pt;
+    margin-bottom: 0;
+}
+
+.log.no-indent .inner-line {
+    margin-left: 0;
+    text-indent: 0;
+}
+
+.log .line-selected {
+    background-color: #ffb2b0;
 }
