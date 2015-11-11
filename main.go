@@ -5,9 +5,9 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/Unknwon/macaron"
+	"github.com/go-macaron/jade"
 	"github.com/gorilla/websocket"
-	"github.com/macaron-contrib/jade"
+	"gopkg.in/macaron.v1"
 )
 
 var (

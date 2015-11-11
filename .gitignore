@@ -24,3 +24,5 @@ _testmain.go
 
 dist
 build
+public/components
+webtail
