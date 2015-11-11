@@ -5,14 +5,16 @@ extends layout
 block script
 	//- script(src='/src/index.js', type='text/jsx')
 	script(src='/js/homepage.js')
+	link(rel='stylesheet', href='/css/homepage.css')
 	//-script(src='/js/index.js')
 
 block content
 	.container(ng-controller='MainCtrl')
-		h1 tail -f log {{name}}
-		ul
-			li(ng-repeat='line in logs')
-				{{line.number}}: {{line.body}}
-		div#example
+		//- h1 tail -f log {{name}}
+		div.logs(scroll-glue-bottom="glued")
+			ul
+				li(ng-repeat='line in logs')
+					{{line.number}}: {{line.body}}
+		//- div#bottom
+		//- div#example
 		//- pre.console
-

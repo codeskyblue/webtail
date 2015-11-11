@@ -1,0 +1,9 @@
+div.logs {
+	height: 200px;
+	overflow: scroll;
+	border: 1px solid red;
+}
+
+html {
+    overflow-y: scroll; 
+}

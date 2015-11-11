@@ -3,6 +3,7 @@
   "dependencies": {
     "angularjs": "~1.4.7",
     "bootstrap": "~3.3.5",
-    "jquery": "~2.1.4"
+    "jquery": "~2.1.4",
+    "angular-scroll-glue": "~2.0.6"
   }
 }
